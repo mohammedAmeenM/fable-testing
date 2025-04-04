@@ -68,7 +68,7 @@ const initialScenesData = [
 const ScriptsLists: React.FC = () => {
   const { id } = useParams();
   const projectId: any = id;
-  const [isOpen, setIsOpen] = useState<number | null>(null);
+  // const [isOpen, setIsOpen] = useState<number | null>(null);
   const [expandedScenes, setExpandedScenes] = useState<number[]>([]);
   const [scenes, setScenes] = useState<Scene[]>(initialScenesData);
 

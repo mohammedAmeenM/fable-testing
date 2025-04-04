@@ -43,14 +43,14 @@ interface Props {
 
 }
 
-interface Comment {
-  id: string;
-  text: string;
-  author: string;
-  timestamp: string;
-  avatar?: string;
+// interface Comment {
+//   id: string;
+//   text: string;
+//   author: string;
+//   timestamp: string;
+//   avatar?: string;
   
-}
+// }
 
 const ScriptWritingSession: React.FC<Props> = ({ scene,updateLocation, updateSynopsis, updateContent ,updateCharacters,scenes,setScenes,projectId })=> {
   const synopsisRef = useRef<HTMLTextAreaElement>(null);
