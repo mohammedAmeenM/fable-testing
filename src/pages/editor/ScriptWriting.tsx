@@ -1,6 +1,3 @@
-import React, { useEffect, useRef, useState } from "react";
-import { FaChevronDown, FaChevronUp, FaTrash } from "react-icons/fa";
-import { MdOutlinePostAdd } from "react-icons/md";
 
 const ScriptWriting:React.FC = () => {
     const getStoredScenes = () => {
