@@ -40,11 +40,7 @@ const ScriptWriting:React.FC = () => {
 
                    {/* Add Dialog Button */}
           <div className="flex flex-col w-1/3 2xl:w-1/3  space-y-4 ">
-            <button className={`border border-black border-opacity-30 rounded-full px-4 py-2 ${
-            selectedButton === "Dialog" 
-              ? "bg-pink-100 text-black font-semibold" 
-              : "bg-blue-200 text-black font-medium"
-          }`}>Dialog</button>
+
             <p className="text-center text-opacity-70 text-black">Type Character & Press Enter</p>
           </div>
 
@@ -61,9 +57,9 @@ const ScriptWriting:React.FC = () => {
         <div className="mt-4 flex justify-center pb-8">
           <button
             className="border flex  justify-center items-center gap-1  text-lg md:text-lg font-bold border-black border-opacity-30 hover:bg-gray-300 rounded-lg px-4 py-1 bg-white text-black"
-            onClick={handleAddScene}
+
           >
-            <span><MdOutlinePostAdd size={23}/></span>
+
             <span className="font-semibold mt-[6px] text-lg">New Scene</span>
           </button>
         </div>
