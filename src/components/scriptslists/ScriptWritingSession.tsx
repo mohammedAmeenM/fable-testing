@@ -1,19 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { MdLocationOn } from "react-icons/md";
-import { FaPen } from "react-icons/fa6";
-import { RxCounterClockwiseClock, RxCross2 } from "react-icons/rx";
-import ActionIcon from "../../assets/action-icon.png";
-import StoryBoardIcon from "../../assets/storyboard-icon2.png";
-import { IoMdPerson, IoMdSend } from "react-icons/io";
-import { FaComment } from "react-icons/fa";
-import { BsQuote } from "react-icons/bs";
-import { PiStarFourFill } from "react-icons/pi";
-import { BiCollapse, BiSolidCommentDetail } from "react-icons/bi";
-import AiSceneModal from "../modal/AiSceneModal";
-import api from "../../api/interceptor/axiosInterceptors";
-import { useSelector } from "react-redux";
-import { RootState } from "../../app/redux";
-import { createComment, deleteComment } from "../../api/services/scriptServices";
+
 
 
 const ScriptWritingSession: React.FC<Props> = ({ scene,updateLocation, updateSynopsis, updateContent ,updateCharacters,scenes,setScenes,projectId })=> {
