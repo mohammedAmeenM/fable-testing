@@ -1,13 +1,7 @@
 
 const ScriptWriting:React.FC = () => {
 
-      useEffect(() => {
-        localStorage.setItem("title", title);
-      }, [title]);
-      
-      const handleTitleChangee = (e:any) => {
-        setTitle(e.target.value);
-      };
+
   return (
     <div className="min-h-screen bg-gray-100">
     {/* Header - Responsive title input */}
