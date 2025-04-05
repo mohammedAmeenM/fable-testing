@@ -55,65 +55,7 @@ const ScriptWriting:React.FC = () => {
 <div className="w-full flex justify-center">
       {/* Main Content Area - Responsive width and padding */}
       <div className="w-full  lg:w-4/5  px-4 md:px-8 lg:px-6 mt-4 lg:mt-7 flex flex-col space-y-8">
-      {scenes.map((scene:any, sceneIndex:any) => (
-          <div key={scene.id} className="w-full bg-white rounded-lg">
-            {/* Scene Header */}
-            <div className="w-full bg-pink-100 p-3 md:p-4 mb-6 rounded-md shadow-md">
-              <div className="flex items-center gap-2 justify-between mb-3">
-                <span className="text-xl md:text-2xl bg-gray-200 py-1 px-3 rounded-md">
-                {sceneIndex + 1}
-                </span>
-                <input
-                  type="text"
-                  className="w-full bg-transparent text-xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-3xl font-medium outline-none"
-                  value={scene.title}
-                  onChange={(e) => handleTitleChange(scene.id, e.target.value)}
-                />
-                <div className="flex gap-2">
-                  <button className="p-2 hover:bg-gray-200 rounded-full">
-                    {scene.isExpanded ? <FaChevronUp /> : <FaChevronDown />}
-                  </button>
-                  {scenes.length > 1 && (
-                <button
-                  className="p-2 hover:bg-red-200 rounded-full text-red-500"
-                  onClick={() => handleDeleteScene(sceneIndex)}
-                >
-                  <FaTrash />
-                </button>
-              )}
-                </div>
-              </div>
-
-              {/* Characters Section */}
-              <div className="mb-4 mt-4 flex items-center gap-2 flex-wrap">
-                <span className="text-xl md:text-xl font-medium">Characters:</span>
-                {scene.characters.map((char:any, charIndex:any) => (
-                  <span
-                    key={charIndex}
-                    className="text-lg md:text-lg lg:text-lg font-medium text-white bg-gray-400 px-4 py-2 rounded-xl flex items-center gap-2"
-                  >
-                    {char}
-                    <button onClick={() => removeCharacter(sceneIndex, charIndex)} className="hover:text-red-500">×</button>
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Scene Content */}
-            {scene.content.map((content:any, contentIndex:any) => (
-              <div key={contentIndex} className="mb-4">
-                {/* Description */}
-                
-
-                {/* Characters Input */}
-               
-
-                {/* Dialog */}
-               
-              </div>
-            ))}
-          </div>
-        ))}
+      
 
         {/* Add Scene Button */}
         <div className="mt-4 flex justify-center pb-8">
