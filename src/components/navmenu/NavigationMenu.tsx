@@ -48,7 +48,6 @@ const NavigationMenu: React.FC = () => {
                 </div>
               </p>
             </div>
- 
             <div
               className={`bg-[#D9D9D9] w-[95px] sm:w-[130px] flex items-center justify-center transition-all duration-300 ${
               activeItem === "story-board" ? "bg-black text-white" : "" }`}
@@ -64,8 +63,6 @@ const NavigationMenu: React.FC = () => {
                 </div>
               </p>
             </div>
-
-
             <div
               className={`bg-[#D9D9D9] w-[70px] sm:w-[115px] rounded-tr-[50px] rounded-br-[50px] flex items-center justify-center transition-all duration-300 ${
               activeItem === "report" ? "bg-black text-white" : "" }`}
