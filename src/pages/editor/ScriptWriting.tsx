@@ -2,25 +2,7 @@
 const ScriptWriting:React.FC = () => {
 
       
-      // Helper function to get default scene
-      const getDefaultScene = () => [
-        {
-          id: 1,
-          title: "EXT. SOMEWHERE - DAY",
-          name: "Enter Your Film Name",
-          characters: [],
-          content: [
-            {
-              description: "",
-            },
-          ],
-          isExpanded: true,
-        },
-      ];
-      
-      const [title, setTitle] = useState(() => {
-        return localStorage.getItem("title") || "Enter Your Film Name";
-      });
+
       
       const [scenes, setScenes] = useState(getStoredScenes);
     
