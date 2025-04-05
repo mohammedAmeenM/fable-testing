@@ -5,7 +5,7 @@ const AiSceneModal: React.FC<{
   onClose: () => void; 
   scene: any; 
   scenes: any; 
-  setScenes: React.Dispatch<React.SetStateAction<any>>; // Function to update scenes 
+  setScenes: React.Dispatch<React.SetStateAction<any>>; 
 }> = ({ isOpen, onClose, scene, scenes, setScenes }) => {
 
   const sceneUpdateRef = React.useRef(false);
@@ -65,7 +65,6 @@ useEffect(() => {
       // Reset the flag
       sceneUpdateRef.current = false;
       
-      // Force refresh by triggering a state change in parent component
       // This is optional but can help ensure parent components detect the change
       if (typeof window !== 'undefined') {
         window.dispatchEvent(new Event('scenesUpdated'));
