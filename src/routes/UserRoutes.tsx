@@ -25,7 +25,6 @@ const AppRoutes = memo(() => {
             {/* <Route path="/" element={<HomePage />} /> */}
             <Route path="/" element={<ProjectPage />} />
             <Route path="/scriptlists/:id" element={<ScriptScenesList />} />
-            <Route path="/scriptwriter" element={<ScriptWriting />} />
           </Route>
         </Routes>
       </Suspense>
