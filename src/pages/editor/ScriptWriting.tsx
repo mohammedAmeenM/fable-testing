@@ -1,23 +1,6 @@
 
 const ScriptWriting:React.FC = () => {
 
-    
-    
-    
-      const handleButtonClick = (buttonName:any) => {
-        setSelectedButton(buttonName);
-      
-        const activeElement = document.activeElement;
-      
-        let activeSceneIndex = -1;
-        Object.keys(inputRefs.current).forEach((key:any) => {
-          if (inputRefs.current[key] === activeElement) {
-            const match = key.match(/scene-(\d+)/);
-            if (match) {
-              activeSceneIndex = parseInt(match[1]);
-            }
-          }
-        });
       
         setScenes((prevScenes:any) =>
           prevScenes.map((scene:any, index:any) => {
