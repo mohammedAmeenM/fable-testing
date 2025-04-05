@@ -174,8 +174,6 @@ const Projects = () => {
             </div>
           </div>
         </div>
-
-        {/* Notifications panel */}
       </div>
       {/* </div> */}
     </>
