@@ -1,19 +1,6 @@
 
 const ScriptWriting:React.FC = () => {
 
-    
-      const handleDeleteScene = (sceneIndex:any) => {
-        setScenes((prevScenes:any) => {
-          // Filter out the deleted scene and update IDs
-          const updatedScenes = prevScenes
-            .filter((_:any, index:any) => index !== sceneIndex)
-            .map((scene:any, index:any) => ({
-              ...scene,
-              id: index + 1, // Reassign IDs to maintain sequence
-            }));
-          return updatedScenes;
-        });
-      };
       const handleKeyDown = (event:any, sceneIndex:any, contentIndex:any) => {
         const input = event.target;
         if (event.key === "Backspace" && input.value === "") {
