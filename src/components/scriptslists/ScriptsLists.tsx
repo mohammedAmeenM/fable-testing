@@ -430,9 +430,9 @@ const ScriptsLists: React.FC = () => {
               className="-ml-5 w-8 h-8 md:w-12 md:h-12"
             />
           </div>
-          <p className="font-medium text-[16px] md:text-[24px]">
+          {/* <p className="font-medium text-[16px] md:text-[24px]">
             4 Members on this project
-          </p>
+          </p> */}
         </div>
 
         <div className="flex flex-col md:flex-row gap-3 w-full md:w-auto">
