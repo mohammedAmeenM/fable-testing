@@ -109,24 +109,7 @@ const ScriptWriting:React.FC = () => {
                
 
                 {/* Dialog */}
-                {content.dialog !== undefined && (
-                  <div className="w-full flex justify-center">
-                    <textarea
-                      ref={(el:any) => (inputRefs.current[`scene-${sceneIndex}-dialog-${contentIndex}`] = el)}
-                      className="w-full md:w-3/5 text-xl md:text-2xl p-2 outline-none resize-none"
-                      rows={2}
-                      placeholder="Type your dialog..."
-                      value={content.dialog}
-                      onChange={(e) => handleContentChange(sceneIndex, contentIndex, "dialog", e.target.value)}
-                      onKeyDown={(e) => handleKeyDown(e, sceneIndex, contentIndex)}
-                      onInput={(e:any) => {
-                        e.target.style.height = "auto";
-                        e.target.style.height = `${e.target.scrollHeight}px`;
-                      }}
-                      onFocus={() => setSelectedButton("Dialog")}
-                    />
-                  </div>
-                )}
+               
               </div>
             ))}
           </div>
