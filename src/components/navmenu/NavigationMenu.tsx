@@ -17,7 +17,6 @@ const NavigationMenu: React.FC = () => {
             <IoArrowBackOutline className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px]" />{" "}
             Back
           </p>
-
           <div className="flex items-center gap-2">
             <div className="bg-[#EDEDED] w-[40px] h-[40px] sm:w-[51px] sm:h-[54px] rounded-[5px] border-[1px] border-[#0000001A]"></div>
             <p className="text-[20px] sm:text-[24px] font-medium">
@@ -77,7 +76,6 @@ const NavigationMenu: React.FC = () => {
           </div> */}
         </div>
       </section>
-
       {/* Bottom Border */}
       <div className="border-b-[3px] mt-2 border-[#0000001A]"></div>
     </div>
