@@ -47,7 +47,6 @@ const Projects = () => {
   return (
     <>
       {/* <div className="flex flex-col h-screen bg-zinc-900 text-white"> */}
-      {/* Top navigation bar */}
 
       {/* Search bar */}
 
