@@ -1,32 +1,6 @@
 
 const ScriptWriting:React.FC = () => {
 
-
-    
-      const removeCharacter = (sceneIndex:any, charIndex:any) => {
-        setScenes(scenes.map((scene:any, index:any) => 
-          index === sceneIndex 
-            ? { 
-                ...scene, 
-                characters: scene.characters.filter((_:any, i:any) => i !== charIndex)
-              }
-            : scene
-        ));
-      };
-    
-      const handleTitleChange = (id:any, newTitle:any) => {
-        setScenes((prevScenes:any) => {
-          const updatedScenes = prevScenes.map((scene:any) =>
-            scene.id === id ? { ...scene, title: newTitle } : scene
-          );
-          
-          // Store the updated scenes in localStorage
-          localStorage.setItem("scenes", JSON.stringify(updatedScenes));
-      
-          return updatedScenes;
-        });
-      };
-    
       useEffect(() => {
         localStorage.setItem("title", title);
       }, [title]);
