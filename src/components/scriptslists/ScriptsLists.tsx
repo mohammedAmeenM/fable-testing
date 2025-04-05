@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ScriptWritingSession from "./ScriptWritingSession";
-import { LuFilter } from "react-icons/lu";
+// import { LuFilter } from "react-icons/lu";
 import { MdLocationOn } from "react-icons/md";
 import { GiBackwardTime } from "react-icons/gi";
 import { BiSolidCommentDetail } from "react-icons/bi";
@@ -445,12 +445,12 @@ const ScriptsLists: React.FC = () => {
               {expandedScenes.length === scenes.length ? "Collapse all scenes" : "Expand all scenes"}
             </p>
           </div>
-          <div className="bg-[#D9D9D9] py-2 px-3 rounded-[10px] flex items-center gap-2">
+          {/* <div className="bg-[#D9D9D9] py-2 px-3 rounded-[10px] flex items-center gap-2">
             <LuFilter className="size-[18px] md:size-[20px]" />
             <button className="font-bold text-[14px] md:text-[15px] cursor-pointer">
               Filter
             </button>
-          </div>
+          </div> */}
           {/* Add Global Episodic Break Button */}
           {/* <div 
             className="bg-[#CBA757] py-2 px-3 rounded-[10px] flex items-center gap-2 cursor-pointer"

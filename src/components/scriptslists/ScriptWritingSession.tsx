@@ -647,7 +647,7 @@ const ScriptWritingSession: React.FC<Props> = ({ scene,updateLocation, updateSyn
     {aiButton.includes(scene.id)&&!nextSceneAi.includes(scene.id) ? (
 
   <div className="flex gap-3 justify-end pr-6 pt-4 mb-4 " >
-    <button 
+    {/* <button 
       className="bg-[#656464] text-white flex gap-1 rounded-[50px] px-5 py-2.5 text-[14px] font-medium cursor-pointer"
     >
       Plot twist
@@ -656,7 +656,7 @@ const ScriptWritingSession: React.FC<Props> = ({ scene,updateLocation, updateSyn
       className="bg-[#656464] text-white flex gap-1 rounded-[50px] px-5 py-2.5 text-[14px] font-medium cursor-pointer"
     >
       Build Character
-    </button>
+    </button> */}
     <button 
       className="bg-[#656464] text-white flex gap-1 rounded-[50px] px-5 py-2.5 text-[14px] font-medium cursor-pointer"
       onClick={()=>handleCreateNextScene(scene.id)}

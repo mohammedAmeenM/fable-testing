@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { IoMdArrowDropdown } from "react-icons/io";
+import React from "react";
+// import { IoMdArrowDropdown } from "react-icons/io";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
 const NavigationMenu: React.FC = () => {
-  const [activeItem, setActiveItem] = useState<string | null>(null);
+  // const [activeItem, setActiveItem] = useState<string | null>(null);
   const navigate = useNavigate()
 
   return (
@@ -23,13 +23,13 @@ const NavigationMenu: React.FC = () => {
         </div>
  
         <div className="flex flex-row gap-4 sm:gap-5 items-center mt-4 "> 
-          <div className=" w-[185px] h-[40px] sm:h-[45px] rounded-full bg-[#6856562d] flex items-center justify-center">
+          {/* <div className=" w-[185px] h-[40px] sm:h-[45px] rounded-full bg-[#6856562d] flex items-center justify-center">
             <div className="w-2.5 h-2.5 bg-green-500 rounded-full mr-3"></div>
             <p className="font-semibold text-[13px] sm:text-[15px]">Project Status</p>
             <IoMdArrowDropdown className="w-5 h-6 sm:w-6 sm:h-7 ml-1 text-[#685656]" />
-          </div>
+          </div> */}
  
-          <div className="flex space-x-0.5 h-[40px] sm:h-[46px]"> 
+          {/* <div className="flex space-x-0.5 h-[40px] sm:h-[46px]"> 
             <div
               className={`bg-[#D9D9D9] w-[80px] sm:w-[115px] rounded-tl-[50px] rounded-bl-[50px] flex items-center justify-center transition-all duration-300 ${
               activeItem === "script" ? "bg-black text-white" : "" }`}
@@ -62,7 +62,7 @@ const NavigationMenu: React.FC = () => {
               </p>
             </div>
 
-            {/* Report Tab */}
+
             <div
               className={`bg-[#D9D9D9] w-[70px] sm:w-[115px] rounded-tr-[50px] rounded-br-[50px] flex items-center justify-center transition-all duration-300 ${
               activeItem === "report" ? "bg-black text-white" : "" }`}
@@ -70,7 +70,7 @@ const NavigationMenu: React.FC = () => {
             >
               <p className="font-semibold text-[12px] sm:text-[13px]">Report</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
