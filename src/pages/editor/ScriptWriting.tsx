@@ -1,24 +1,6 @@
 
 const ScriptWriting:React.FC = () => {
-    const getStoredScenes = () => {
-        const storedScenes = localStorage.getItem("scenes");
-        if (storedScenes) {
-          try {
-            const parsedScenes = JSON.parse(storedScenes);
-            // Ensure each scene has a valid 'content' array and update IDs
-            return parsedScenes.map((scene:any, index:any) => ({
-              ...scene,
-              id: index + 1, // Ensure IDs are sequential
-              content: Array.isArray(scene.content) ? scene.content : [],
-            }));
-          } catch (error) {
-            console.error("Error parsing scenes from localStorage", error);
-            return getDefaultScene();
-          }
-        } else {
-          return getDefaultScene();
-        }
-      };
+
       
       // Helper function to get default scene
       const getDefaultScene = () => [
