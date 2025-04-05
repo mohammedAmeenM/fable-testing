@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 
-const AiSceneModal: React.FC<{ 
-  isOpen: boolean; 
-  onClose: () => void; 
-  scene: any; 
-  scenes: any; 
-  setScenes: React.Dispatch<React.SetStateAction<any>>; 
+const AiSceneModal: React.FC<{
+  isOpen: boolean;
+  onClose: () => void;
+  scene: any;
+  scenes: any;
+  setScenes: React.Dispatch<React.SetStateAction<any>>;
 }> = ({ isOpen, onClose, scene, scenes, setScenes }) => {
-
   const sceneUpdateRef = React.useRef(false);
 
   const handleSaveScene = () => {
@@ -22,14 +21,22 @@ const AiSceneModal: React.FC<{
     // Create a deep copy of scenes to ensure React detects the change
     const updatedScenes = JSON.parse(JSON.stringify(scenes));
 
-    if (lastScene.content.length === 1 && lastScene.content[0].description === '') {
+    if (
+      lastScene.content.length === 1 &&
+      lastScene.content[0].description === ""
+    ) {
       // Update the last scene with the new content
       updatedScenes[lastSceneIndex] = {
         ...lastScene,
         content: scene.content, // Assign the selected scene's content
-        lastEdited: new Date().toLocaleDateString() + " " + 
-                   new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + 
-                   " by User"
+        lastEdited:
+          new Date().toLocaleDateString() +
+          " " +
+          new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }) +
+          " by User",
       };
     } else {
       // Add a new scene with the AI-generated content
@@ -41,9 +48,14 @@ const AiSceneModal: React.FC<{
         synopsis: scene.synopsis || "",
         content: scene.content,
         characters: scene.characters || [],
-        lastEdited: new Date().toLocaleDateString() + " " + 
-                    new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + 
-                    " by User"
+        lastEdited:
+          new Date().toLocaleDateString() +
+          " " +
+          new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }) +
+          " by User",
       };
 
       updatedScenes.push(newScene);
@@ -51,23 +63,23 @@ const AiSceneModal: React.FC<{
 
     // Set the flag so we know we've updated scenes
     sceneUpdateRef.current = true;
-    
+
     // Update scenes state with new array (ensuring immutability)
     setScenes(updatedScenes);
-    
+
     // Close the modal
     onClose();
   };
 
   // Effect to ensure parent components re-render after scene update
-useEffect(() => {
+  useEffect(() => {
     if (sceneUpdateRef.current) {
       // Reset the flag
       sceneUpdateRef.current = false;
-      
+
       // This is optional but can help ensure parent components detect the change
-      if (typeof window !== 'undefined') {
-        window.dispatchEvent(new Event('scenesUpdated'));
+      if (typeof window !== "undefined") {
+        window.dispatchEvent(new Event("scenesUpdated"));
       }
     }
   }, [scenes]);
@@ -88,8 +100,12 @@ useEffect(() => {
           {/* Header Section */}
           <div className="flex justify-between w-full p-4 bg-[#EDEDED] rounded-t-lg text-[#000000]">
             <div className="flex flex-col">
-              <p className="py-1 text-lg font-semibold">Scene Title as suggested by AI</p>
-              <p className="text-sm text-[#444444] font-medium">Exploring idea further</p>
+              <p className="py-1 text-lg font-semibold">
+                Scene Title as suggested by AI
+              </p>
+              <p className="text-sm text-[#444444] font-medium">
+                Exploring idea further
+              </p>
             </div>
             <div className="mt-3">
               <button className="bg-[#D9D9D9] shadow-[inset_0_4px_4px_0_rgba(0,0,0,0.25)] px-4 py-1 rounded-[15px]">
@@ -103,7 +119,9 @@ useEffect(() => {
             {scene.content.map((item: any, index: any) => (
               <div key={index}>
                 {item.description && (
-                  <p className="text-gray-700 font-medium mb-4">{item.description}</p>
+                  <p className="text-gray-700 font-medium mb-4">
+                    {item.description}
+                  </p>
                 )}
                 {item.characters && (
                   <p className="font-semibold ml-2 inline-block px-2 bg-[#D9D9D9]/60">
@@ -114,14 +132,16 @@ useEffect(() => {
                   <p className="text-black ml-6 mb-6">➤ {item.dialog}</p>
                 )}
                 {item.parenthetical && (
-                  <p className="text-gray-500 ml-6 italic">{item.parenthetical}</p>
+                  <p className="text-gray-500 ml-6 italic">
+                    {item.parenthetical}
+                  </p>
                 )}
               </div>
             ))}
 
             <div className="flex w-full justify-end">
-              <button 
-                onClick={handleSaveScene} 
+              <button
+                onClick={handleSaveScene}
                 className="bg-[#D9D9D9] rounded-[10px] px-3 py-2 text-lg font-medium"
               >
                 Done
