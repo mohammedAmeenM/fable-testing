@@ -4,13 +4,16 @@ import { IoNotifications } from "react-icons/io5";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
 import Notification from "../notification/Notification";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../app/redux";
 import { getProjectsByUserId } from "../../api/services/projectTitleService";
 import AddProjectModal from "../modal/AddProjectModal";
 import { useNavigate } from "react-router-dom";
+import { logout } from "../../redux/slices/authSlice";
+import { FiLogOut } from "react-icons/fi";
 
 const Projects = () => {
+  const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false);
   const [projects, setProjects] = useState<any[]>([]);
   const [projectAddModal, setProjectAddModal] = useState(false);
@@ -36,6 +39,11 @@ const Projects = () => {
 
   const handleScriptList = (scriptId:any)=>{
     navigate(`/scriptlists/${scriptId}`)
+  }
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/login');
   }
 
   return (
@@ -66,12 +74,21 @@ const Projects = () => {
               >
                 Add Project
               </button>
-              <button
-                className="px-8 py-2 rounded-2xl bg-black text-white border-2 border-cyan-900"
-                onClick={() => navigate('/login')}
-              >
-                Login
-              </button>
+              {userId ? (
+                  <button
+                    className="px-8 py-2 rounded-2xl bg-black text-white border-2 border-red-900 flex items-center gap-2"
+                    onClick={handleLogout}
+                  >
+                    <FiLogOut /> Logout
+                  </button>
+                ) : (
+                  <button
+                    className="px-8 py-2 rounded-2xl bg-black text-white border-2 border-cyan-900"
+                    onClick={() => navigate('/login')}
+                  >
+                    Login
+                  </button>
+                )}
               {projectAddModal && (
                 <AddProjectModal
                   onClose={() => setProjectAddModal(false)}
