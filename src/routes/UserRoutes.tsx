@@ -10,7 +10,6 @@ const SignupPage = lazy(() => import("../pages/auth/SignupPage"));
 const LoginPage = lazy(() => import("../pages/auth/LoginPage"));
 const ProfileCreation = lazy(() => import("../pages/auth/ProfileCreation"));
 const ScriptScenesList = lazy(() => import("../components/ScriptScenesList"));
-const ScriptWriting = lazy(() => import("../pages/editor/ScriptWriting"));
 
 const AppRoutes = memo(() => {
   return (
