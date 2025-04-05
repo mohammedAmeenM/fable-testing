@@ -106,20 +106,7 @@ const ScriptWriting:React.FC = () => {
                 
 
                 {/* Characters Input */}
-                {content.characters !== undefined && (
-                  <div className="w-full flex justify-center">
-                    <input
-                      ref={(el:any) => (inputRefs.current[`scene-${sceneIndex}-characters-${contentIndex}`] = el)}
-                      type="text"
-                      className="w-full md:w-1/2 text-xl md:text-3xl text-center p-2 outline-none"
-                      placeholder="Type your characters..."
-                      value={content.characters}
-                      onChange={(e) => handleContentChange(sceneIndex, contentIndex, "characters", e.target.value)}
-                      onKeyDown={(e) => handleKeyDown(e, sceneIndex, contentIndex)}
-                      onFocus={() => setSelectedButton("Characters")}
-                    />
-                  </div>
-                )}
+               
 
                 {/* Dialog */}
                 {content.dialog !== undefined && (
