@@ -2,22 +2,7 @@
 
 
 const ScriptWritingSession: React.FC<Props> = ({ scene,updateLocation, updateSynopsis, updateContent ,updateCharacters,scenes,setScenes,projectId })=> {
-  const synopsisRef = useRef<HTMLTextAreaElement>(null);
-  const userId = useSelector((state: RootState) => state.auth.userId);
 
-  console.log(scene,'////////////')
-  const inputRefs = useRef<Record<string, HTMLInputElement | HTMLTextAreaElement>>({});
-  const commentInputRef = useRef<HTMLTextAreaElement>(null);
-  const [selectedButton, setSelectedButton] = useState<string>("Action");
-  const [sceneContent, setSceneContent] = useState<SceneContent[]>([{description: ""}]);
-  const [aiButton,setAiButton]=useState<number[]>([]);
-  const [nextSceneAi,setNextSceneAi]=useState<number[]>([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedAiScene, setSelectedAiScene] = useState<any | null>(null);
-
-  const [isCommentSectionOpen, setIsCommentSectionOpen] = useState(false);
-  const [newComment, setNewComment] = useState("");
-  // const [comments, setComments] = useState<Comment[]>( []);
 
   useEffect(() => {
     setSceneContent(scene.content || [{ description: "" }]);
