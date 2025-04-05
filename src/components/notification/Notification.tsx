@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { GoArrowRight } from 'react-icons/go'
 
+
+
 const Notification = () => {
     const [notifications, ] = useState([
         {
