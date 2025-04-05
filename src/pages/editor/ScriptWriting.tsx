@@ -1,46 +1,6 @@
 
 const ScriptWriting:React.FC = () => {
 
-      
-        setScenes((prevScenes:any) =>
-          prevScenes.map((scene:any, index:any) => {
-            if (index === activeSceneIndex) {
-              let newContent = {};
-              if (buttonName === "Dialog") {
-                newContent = { dialog: "" };
-              } else if (buttonName === "Characters") {
-                newContent = { characters: "" };
-              } else if (buttonName === "Description") {
-                newContent = { description: "" };
-              }
-      
-              return {
-                ...scene,
-                content: [...scene.content, newContent],
-              };
-            }
-            return scene;
-          })
-        );
-      };
-      const handleContentChange = (sceneIndex:any, contentIndex:any, field:any, value:any) => {
-        setScenes((prevScenes:any) =>
-          prevScenes.map((scene:any, index:any) =>
-            index === sceneIndex
-              ? {
-                  ...scene,
-                  content: scene.content.map((content:any, idx:any) =>
-                    idx === contentIndex
-                      ? {
-                          ...content,
-                          [field]: value,
-                        }
-                      : content
-                  ),
-                }
-              : scene
-          )
-        );
     
         // Adjust height after content change
         setTimeout(() => {
