@@ -103,17 +103,7 @@ const ScriptWriting:React.FC = () => {
             {scene.content.map((content:any, contentIndex:any) => (
               <div key={contentIndex} className="mb-4">
                 {/* Description */}
-                {content.description !== undefined && (
-                  <textarea
-                    ref={(el:any) => (inputRefs.current[`scene-${sceneIndex}-description-${contentIndex}`] = el)}
-                    className="w-full p-3 md:p-4 text-xl md:text-2xl outline-none resize-none"
-                    value={content.description}
-                    placeholder="Type Your Content Here...................."
-                    onChange={(e) => handleContentChange(sceneIndex, contentIndex, "description", e.target.value)}
-                    onKeyDown={(e) => handleKeyDown(e, sceneIndex, contentIndex)}
-                    onFocus={() => setSelectedButton("Description")}
-                  />
-                )}
+                
 
                 {/* Characters Input */}
                 {content.characters !== undefined && (
