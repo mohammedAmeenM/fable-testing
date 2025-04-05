@@ -4,34 +4,6 @@
 const ScriptWritingSession: React.FC<Props> = ({ scene,updateLocation, updateSynopsis, updateContent ,updateCharacters,scenes,setScenes,projectId })=> {
 
 
-  useEffect(() => {
-    setSceneContent(scene.content || [{ description: "" }]);
-  }, [scene]);
-  
-  useEffect(() => {
-    console.log("Scene content updated:", sceneContent);
-    handleClearAi()
-  }, [sceneContent]);
-
-  // Initialize content with description if empty
-  useEffect(() => {
-    const initialContent = scene.content && scene.content.length > 0 
-      ? scene.content 
-      : [{description: ""}];
-    
-    setSceneContent(initialContent);
-    setNextScene([])
-  }, [scene.id]);
-
-  // Focus first description input when the session loads
-  useEffect(() => {
-    setTimeout(() => {
-      const firstDescInput = inputRefs.current[`scene-${scene.id}-description-0`];
-      if (firstDescInput) {
-        firstDescInput.focus();
-      }
-    }, 100);
-  }, [scene.id]);
 
   // Adjust textareas height
   useEffect(() => {
