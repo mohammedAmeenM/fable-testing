@@ -1,9 +1,103 @@
+import React, { useEffect, useRef, useState } from "react";
+import { MdLocationOn } from "react-icons/md";
+import { FaPen } from "react-icons/fa6";
+import { RxCounterClockwiseClock, RxCross2 } from "react-icons/rx";
+import ActionIcon from "../../assets/action-icon.png";
+import StoryBoardIcon from "../../assets/storyboard-icon2.png";
+import { IoMdPerson, IoMdSend } from "react-icons/io";
+import { FaComment } from "react-icons/fa";
+import { BsQuote } from "react-icons/bs";
+import { PiStarFourFill } from "react-icons/pi";
+import { BiCollapse, BiSolidCommentDetail } from "react-icons/bi";
+import AiSceneModal from "../modal/AiSceneModal";
+import api from "../../api/interceptor/axiosInterceptors";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/redux";
+import { createComment, deleteComment } from "../../api/services/scriptServices";
+interface SceneContent {
+  description?: string;
+  characters?: string;
+  dialog?: string;
+  parenthetical?:string;
+}
+interface Scene {
+  id: number;
+  title: string;
+  sceneId?:any;
+  location: string;
+  synopsis: string;
+  lastEdited: string;
+  content: SceneContent[];
+  characters?: string[];
+  comments?:any;
+}
+interface Props {
+  scene: Scene;
+  updateLocation: (location: string) => void;
+  updateSynopsis: (synopsis: string) => void;
+  updateContent: (content: SceneContent[]) => void;
+  updateCharacters: (character: string) => void; 
+  scenes:any
+  setScenes:any
+  projectId?:any
 
+}
 
+// interface Comment {
+//   id: string;
+//   text: string;
+//   author: string;
+//   timestamp: string;
+//   avatar?: string;
+  
+// }
 
 const ScriptWritingSession: React.FC<Props> = ({ scene,updateLocation, updateSynopsis, updateContent ,updateCharacters,scenes,setScenes,projectId })=> {
+  const synopsisRef = useRef<HTMLTextAreaElement>(null);
+  const userId = useSelector((state: RootState) => state.auth.userId);
 
+  console.log(scene,'////////////')
+  const inputRefs = useRef<Record<string, HTMLInputElement | HTMLTextAreaElement>>({});
+  const commentInputRef = useRef<HTMLTextAreaElement>(null);
+  const [selectedButton, setSelectedButton] = useState<string>("Action");
+  const [sceneContent, setSceneContent] = useState<SceneContent[]>([{description: ""}]);
+  const [aiButton,setAiButton]=useState<number[]>([]);
+  const [nextSceneAi,setNextSceneAi]=useState<number[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedAiScene, setSelectedAiScene] = useState<any | null>(null);
 
+  const [isCommentSectionOpen, setIsCommentSectionOpen] = useState(false);
+  const [newComment, setNewComment] = useState("");
+  // const [comments, setComments] = useState<Comment[]>( []);
+
+  useEffect(() => {
+    setSceneContent(scene.content || [{ description: "" }]);
+  }, [scene]);
+  
+  useEffect(() => {
+    console.log("Scene content updated:", sceneContent);
+    handleClearAi()
+  }, [sceneContent]);
+
+  // Initialize content with description if empty
+  useEffect(() => {
+    const initialContent = scene.content && scene.content.length > 0 
+      ? scene.content 
+      : [{description: ""}];
+    
+    setSceneContent(initialContent);
+    setNextScene([])
+  }, [scene.id]);
+
+  // Focus first description input when the session loads
+  useEffect(() => {
+    setTimeout(() => {
+      const firstDescInput = inputRefs.current[`scene-${scene.id}-description-0`];
+      if (firstDescInput) {
+        firstDescInput.focus();
+      }
+    }, 100);
+  }, [scene.id]);
 
   // Adjust textareas height
   useEffect(() => {
