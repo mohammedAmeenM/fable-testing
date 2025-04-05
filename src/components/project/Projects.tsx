@@ -47,9 +47,6 @@ const Projects = () => {
   return (
     <>
       {/* <div className="flex flex-col h-screen bg-zinc-900 text-white"> */}
-
-      {/* Search bar */}
-
       <div className="flex items-center">
         <div className="flex-1 relative">
           <div className="w-full bg-white text-black">
