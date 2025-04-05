@@ -14,43 +14,7 @@ import api from "../../api/interceptor/axiosInterceptors";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/redux";
 import { createComment, deleteComment } from "../../api/services/scriptServices";
-interface SceneContent {
-  description?: string;
-  characters?: string;
-  dialog?: string;
-  parenthetical?:string;
-}
-interface Scene {
-  id: number;
-  title: string;
-  sceneId?:any;
-  location: string;
-  synopsis: string;
-  lastEdited: string;
-  content: SceneContent[];
-  characters?: string[];
-  comments?:any;
-}
-interface Props {
-  scene: Scene;
-  updateLocation: (location: string) => void;
-  updateSynopsis: (synopsis: string) => void;
-  updateContent: (content: SceneContent[]) => void;
-  updateCharacters: (character: string) => void; 
-  scenes:any
-  setScenes:any
-  projectId?:any
 
-}
-
-// interface Comment {
-//   id: string;
-//   text: string;
-//   author: string;
-//   timestamp: string;
-//   avatar?: string;
-  
-// }
 
 const ScriptWritingSession: React.FC<Props> = ({ scene,updateLocation, updateSynopsis, updateContent ,updateCharacters,scenes,setScenes,projectId })=> {
   const synopsisRef = useRef<HTMLTextAreaElement>(null);
