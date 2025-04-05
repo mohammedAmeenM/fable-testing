@@ -1,21 +1,6 @@
 
 const ScriptWriting:React.FC = () => {
 
-      
-
-      
-
-      useEffect(() => {
-        // Update scene IDs before saving to ensure they're sequential
-        const updatedScenes = scenes.map((scene:any, index:any) => ({
-          ...scene,
-          id: index + 1,
-        }));
-        localStorage.setItem("scenes", JSON.stringify(updatedScenes));
-      }, [scenes]);
-    
-      const inputRefs:any = useRef({});
-      const [selectedButton, setSelectedButton] = useState("Description");
     
     
     
