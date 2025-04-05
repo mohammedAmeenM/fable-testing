@@ -9,6 +9,7 @@ interface AddProjectModalProps {
   fetchProjects: () => void;
 }
 
+
 const AddProjectModal = ({ onClose, fetchProjects }: AddProjectModalProps) => {
   const [projectName, setProjectName] = useState("");
   const [selectedType, setSelectedType] = useState("");
