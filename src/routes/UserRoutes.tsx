@@ -2,6 +2,7 @@ import { lazy, Suspense, memo} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScriptScenesList from "../components/ScriptScenesList";
 import ScriptWriting from "../pages/editor/ScriptWriting";
+import PrivateRoute from "../utils/UserProtectRouter";
 
 
 
@@ -24,12 +25,14 @@ const AppRoutes = memo(() => {
         <Routes>
           <Route path="/signup" element={<SignupPage/>} />
           <Route path="/login" element={<LoginPage/>} />
+          <Route element={<PrivateRoute />}> 
           <Route path="/create/profile" element={<ProfileCreation/>} />
           {/* User Routes */}
           {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/" element={<ProjectPage />} />
           <Route path="/scriptlists/:id" element={<ScriptScenesList />} />
         <Route path="/scriptwriter" element={<ScriptWriting />} />
+        </Route>
         </Routes>
       </Suspense>
     </Router>
