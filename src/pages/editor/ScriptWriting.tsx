@@ -4,24 +4,7 @@ const ScriptWriting:React.FC = () => {
       
 
       
-      const [scenes, setScenes] = useState(getStoredScenes);
-    
-      useEffect(() => {
-        // Function to adjust a single textarea's height
-        const adjustTextareaHeight = (textarea:any) => {
-          if (textarea) {
-            textarea.style.height = 'auto';
-            textarea.style.height = `${textarea.scrollHeight}px`;
-          }
-        };
-    
-        // Adjust all textareas in the component
-        Object.values(inputRefs.current).forEach((element:any) => {
-          if (element && element.tagName.toLowerCase() === 'textarea') {
-            adjustTextareaHeight(element);
-          }
-        });
-      }, [scenes]);
+
       useEffect(() => {
         // Update scene IDs before saving to ensure they're sequential
         const updatedScenes = scenes.map((scene:any, index:any) => ({
