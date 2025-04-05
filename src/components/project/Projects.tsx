@@ -24,9 +24,7 @@ const Projects = () => {
   const fetchProjectsbyUserId = async () => {
     try {
       const response: any = await getProjectsByUserId(userId);
-      console.log(response.data, ".................................");
       if (response?.data.data) {
-        console.log(response.data,'111111')
         setProjects(response.data.data);
       }
     } catch (error) {
