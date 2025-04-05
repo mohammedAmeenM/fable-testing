@@ -1,33 +1,6 @@
 
 const ScriptWriting:React.FC = () => {
 
-
-      const handleAddScene = () => {
-        setScenes((prevScenes:any) => {
-          const newScene = {
-            id: prevScenes.length + 1,
-            title: `EXT. NEW SCENE - DAY`,
-            characters: [],
-            content: [
-              {
-                description: "",
-              },
-            ],
-            isExpanded: true,
-          };
-          return [...prevScenes, newScene];
-        });
-      
-        // Focus the description textarea of the new scene after it's added
-        setTimeout(() => {
-          const newSceneIndex = scenes.length;
-          const newTextarea = inputRefs.current[`scene-${newSceneIndex}-description-0`];
-          if (newTextarea) {
-            newTextarea.focus();
-          }
-        }, 0);
-      };
-      
     
       const handleDeleteScene = (sceneIndex:any) => {
         setScenes((prevScenes:any) => {
