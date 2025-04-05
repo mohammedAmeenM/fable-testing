@@ -1,17 +1,7 @@
 
 const ScriptWriting:React.FC = () => {
 
-    
-        // Adjust height after content change
-        setTimeout(() => {
-          const textarea = inputRefs.current[`scene-${sceneIndex}-${field}-${contentIndex}`];
-          if (textarea && textarea.tagName.toLowerCase() === 'textarea') {
-            textarea.style.height = 'auto';
-            textarea.style.height = `${textarea.scrollHeight}px`;
-          }
-        }, 0);
-      };
-    
+
       const handleAddScene = () => {
         setScenes((prevScenes:any) => {
           const newScene = {
